@@ -3,6 +3,23 @@ layout: page
 title: Thông tin thêm
 permalink: /lien-ket/
 ---
+{% assign cac_ma_so_dt = site.data.masodienthoai %}
+<table class="table">
+    <tr>
+        <th>Mã số</th>
+        <th>Tỉnh</th>
+    </tr>
+    {% for thongtin_dienthoai in cac_ma_so_dt %}
+        <tr>
+            <td>{{ thongtin_dienthoai.maso }}</td>
+            <td>{{ thongtin_dienthoai.tinh }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+
 <div class="list-group">
     <a href="https://xuanthulab.net/lap-trinh-c-co-ban/" class="list-group-item list-group-item-action">Lập trình C#</a>
     <a href="https://xuanthulab.net/docker/" class="list-group-item list-group-item-action">Sử dụng Docker</a>
@@ -10,11 +27,5 @@ permalink: /lien-ket/
     <a href="https://xuanthulab.net/sql/" class="list-group-item list-group-item-action">SQL</a>
 </div>
       
-<ul>
-        {% for post in site.posts %}
-          <li>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+
       
